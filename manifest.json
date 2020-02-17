@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "Convert_test",
+  "description": "测试植入自己写的js，实现选择文字转语音的功能",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "icon-64.png",
+    "default_title": "Hello CC",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": [
+      "js/background.js",
+      "js/jquery-3.4.1.min.js"
+    ],
+    "persistent": false
+  },
+  "icons": {
+    "16": "icon-16.png",
+    "64": "icon-64.png",
+    "128": "icon-128.png"
+  },
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "js": [
+        "main.js",
+        "js/jquery-3.4.1.min.js"
+      ],
+      "matches": [
+        "https://baijiahao.baidu.com/*"
+      ]
+    }
+  ]
+}
